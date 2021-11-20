@@ -1,0 +1,24 @@
+{
+  "name": "web-for-sensei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kngan99/web-for_sensei.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kngan99/web-for_sensei/issues"
+  },
+  "homepage": "https://github.com/kngan99/web-for_sensei",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
