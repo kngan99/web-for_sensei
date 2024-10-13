@@ -1,5 +1,4 @@
 name: CICD (Dev, Staging, Prod)
-
 on:
   pull_request:
     branches:
@@ -17,4 +16,6 @@ jobs:
     
   staging-deploy:
     needs: staging-approval-gate
-    run: echo "Start deployment"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start deployment"
