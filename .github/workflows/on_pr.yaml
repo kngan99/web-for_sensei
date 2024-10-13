@@ -6,13 +6,10 @@ on:
 
 jobs:
   staging-approval-gate:
-    environment: staging
+    environment: Test
     runs-on: ubuntu-latest
     steps:
-      - name: approved
-        env: 
-          ENV_NAME: Test
-        run: echo "running"
+      - run: echo "running"
     
   staging-deploy:
     needs: staging-approval-gate
