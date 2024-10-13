@@ -12,7 +12,7 @@ jobs:
       - name: approved
         env: 
           ENV_NAME: Staging
-        run: write-host "Approve for $($env.ENV_NAME)"
+        run: write-host "Approve for Staging"
     
   staging-deploy:
     needs: staging-approval-gate
