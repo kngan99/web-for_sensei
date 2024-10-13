@@ -1,8 +1,8 @@
 name: CICD (Dev, Staging, Prod)
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - chore/test
 
 jobs:
   staging-approval-gate:
