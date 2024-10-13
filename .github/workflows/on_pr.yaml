@@ -1,0 +1,20 @@
+name: CICD (Dev, Staging, Prod)
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  staging-approval-gate:
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: approved
+        env: 
+          ENV_NAME: Staging
+        run: write-host "Approve for $($env.ENV_NAME)"
+    
+  staging-deploy:
+    needs: staging-approval-gate
+    run: echo "Start deployment"
