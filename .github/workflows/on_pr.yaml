@@ -5,6 +5,7 @@ on:
       - chore/test
 
 jobs:
+  # Test
   staging-approval-gate:
     environment: Test
     runs-on: ubuntu-latest
