@@ -17,7 +17,7 @@ jobs:
       - run: echo "running"
     
   sonarcloud:
-    needs: hold_run_sonarcloud
+    needs: [hold_run_sonarcloud, coverage]
     runs-on: ubuntu-latest
     steps:
       - run: echo "Start deployment"
