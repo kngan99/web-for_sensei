@@ -1,4 +1,4 @@
-name: CICD (Dev, Staging, Prod)
+name: CICD
 on:
   push:
     branches:
@@ -6,14 +6,18 @@ on:
 
 jobs:
   # Test
-  staging-approval-gate:
+  coverage:
+   runs-on: ubuntu-latest
+   steps:
+    - run: echo "rspec"
+  hold_run_sonarcloud:
     environment: Test
     runs-on: ubuntu-latest
     steps:
       - run: echo "running"
     
-  staging-deploy:
-    needs: staging-approval-gate
+  sonarcloud:
+    needs: hold_run_sonarcloud
     runs-on: ubuntu-latest
     steps:
       - run: echo "Start deployment"
