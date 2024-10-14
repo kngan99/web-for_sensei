@@ -1,0 +1,23 @@
+name: CICD
+on:
+  push:
+    branches:
+      - chore/test
+
+jobs:
+  # Test
+  coverage:
+   runs-on: ubuntu-latest
+   steps:
+    - run: echo "rspec"
+  hold_run_sonarcloud:
+    environment: Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "running"
+    
+  sonarcloud:
+    needs: [hold_run_sonarcloud, coverage]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start deployment"
